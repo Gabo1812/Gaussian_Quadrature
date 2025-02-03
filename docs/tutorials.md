@@ -121,3 +121,4 @@ Valor de la integral para N=7: 317.344
 Podemos observar que para $𝑁=4$ obtenemos el valor correcto de la integral, ya que, según la teoría de la cuadratura de Gauss-Legendre, esta es exacta para polinomios de grado $(2𝑁−1)$.
 
 Es decir, con $𝑁=4$, la cuadratura es exacta para polinomios de grado 7 o inferior.
+Además note que el resultado de la integral tambien es exacto para $𝑁=7$
