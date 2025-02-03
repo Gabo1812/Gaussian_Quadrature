@@ -463,7 +463,7 @@ cuadratura de Gauss.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>f</code></td>            <td>
+<td><code>func_integrar</code></td>            <td>
                   <code>ndarray</code>
             </td>
             <td>
@@ -502,7 +502,7 @@ cuadratura de Gauss.</p>
 <span class="sd">        x (ndarray): Los puntos en los cuales se evalúa la función.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        f (ndarray): Los valores de la función evaluados en los puntos x.</span>
+<span class="sd">        func_integrar (ndarray): Los valores de la función evaluados en los puntos x.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">6</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
