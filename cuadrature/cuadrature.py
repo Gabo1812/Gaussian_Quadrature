@@ -4,8 +4,8 @@ def gaussxw(N):
     """
     Calcula los puntos de colocación (x_k) y los pesos (w_k) para la cuadratura de Gauss.
 
-    Este método utiliza una aproximación inicial seguida de un método de Newton para 
-    calcular las raíces de los polinomios de Legendre. Luego, se calculan los pesos 
+    Este método utiliza una aproximación inicial seguida de un método de Newton para
+    calcular las raíces de los polinomios de Legendre. Luego, se calculan los pesos
     asociados a estas raíces.
 
     Args:
@@ -15,7 +15,11 @@ def gaussxw(N):
         tuple: Un tuple con dos elementos:
             - x (ndarray): Los puntos de colocación de Gauss.
             - w (ndarray): Los pesos asociados a los puntos de colocación.
-    
+
+    Example:
+        - x,w = gaussxw(4)
+        - print(x,w)
+
     """
     # Aproximación inicial de los puntos
     a = np.linspace(3, 4 * (N - 1), N) / ((4 * N) + 2)
@@ -43,8 +47,8 @@ def gaussxwab(a, b, x, w):
     """
     Reescala los puntos y pesos de la cuadratura de Gauss al intervalo [a, b].
 
-    Esta función toma los puntos de colocación (x) y los pesos (w) calculados para 
-    el intervalo estándar [-1, 1] y los transforma para que correspondan al intervalo 
+    Esta función toma los puntos de colocación (x) y los pesos (w) calculados para
+    el intervalo estándar [-1, 1] y los transforma para que correspondan al intervalo
     [a, b].
 
     Args:
@@ -57,7 +61,11 @@ def gaussxwab(a, b, x, w):
         tuple: Un tuple con dos elementos:
             - x (ndarray): Los puntos de colocación reescalados al intervalo [a, b].
             - w (ndarray): Los pesos reescalados para el intervalo [a, b].
-    
+
+    Example:
+        - x_escalado,w_escalado = gaussxw(1,3,x,w)
+        - print(x_escalado,w_escalado)
+
     """
     return 0.5 * (b - a) * x + 0.5 * (b + a), 0.5 * (b - a) * w
 
@@ -65,14 +73,14 @@ def func_integrar(x):
     """
     Función a integrar en la cuadratura de Gauss.
 
-    Esta es la función definida para realizar la integración utilizando la 
+    Esta es la función definida para realizar la integración utilizando la
     cuadratura de Gauss.
 
     Args:
         x (ndarray): Los puntos en los cuales se evalúa la función.
 
     Returns:
-        func_integrar (ndarray): Los valores de la función evaluados en los puntos x.
+        ndarray: Los valores de la función evaluados en los puntos x.
 
     """
     return x**6 - np.sin(2*x) * x**2
@@ -84,7 +92,7 @@ lim_sup = 3  # Límite superior de la integral
 # Evaluación para distintos valores de N
 for N in [2, 3, 4, 5, 6, 7]:
     print(f"Para N={N}:")
-    
+
     # Calcular puntos de colocación y pesos utilizando la cuadratura de Gauss
     p_muest, peso = gaussxw(N)
     print("Puntos de muestreo:", p_muest)
