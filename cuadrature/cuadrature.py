@@ -72,7 +72,7 @@ def func_integrar(x):
         x (ndarray): Los puntos en los cuales se evalúa la función.
 
     Returns:
-        f{x} (ndarray): Los valores de la función evaluados en los puntos x.
+        func (ndarray): Los valores de la función evaluados en los puntos x.
 
     """
     return x**6 - np.sin(2*x) * x**2
